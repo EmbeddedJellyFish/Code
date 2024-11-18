@@ -6,5 +6,5 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=SeaScout.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/SeaScout.X.production.hex
+CND_ARTIFACT_NAME_default=pic.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/pic.production.hex

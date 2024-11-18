@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=SeaScout.X
+PROJECTNAME=pic
 
 # Active Configuration
 DEFAULTCONF=default

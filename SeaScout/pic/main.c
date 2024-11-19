@@ -12,7 +12,7 @@
 //Motor Driver
 #define Motor_Slave
 #define Motor_Data
-#define Motor_Voltage
+#define Motor_Voltage 
 
 //Defining ID so that we can separate the data sent over UART
 typedef enum{
@@ -44,15 +44,15 @@ float HumidityFormat(uint16_t data){
 }
 
 //Prints data formatted properly over UART 
-void bufferformat(float data, SensorType sensor) {
+void send_Data(float data, SensorType sensor) {
 
     char buffer[20];
     if (sensor == Temp_ID) {
-        sprintf(buffer, "Temperature: %.3f", data);
+        sprintf(buffer, "Temperature: %.3f°C", data);
     } else if (sensor == Hum_ID) {
-        sprintf(buffer, "Humidity: %.3f", HumidityFormat(data));
+        sprintf(buffer, "Humidity: %.3f%", HumidityFormat(data));
     } else if (sensor == Motor_ID) {
-        sprintf(buffer, "Speed: %.3f", data);
+        sprintf(buffer, "Speed: %.3frpm", data);
     }
     printf("%s\n", buffer); 
 
@@ -72,8 +72,8 @@ void main(void) {
 
     for(;;){
         ReadData();
-        bufferformat(HumidityFormat(raw_hum), Hum_ID);
-        bufferformat(binarytoDecimal(raw_temp), Temp_ID); 
+        send_Data(HumidityFormat(raw_hum), Hum_ID);
+        send_Data(binarytoDecimal(raw_temp), Temp_ID); 
         __delay_ms(1000);
     }
 }

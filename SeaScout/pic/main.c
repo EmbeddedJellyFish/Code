@@ -19,15 +19,15 @@ typedef enum{
     Temp_ID = 1,
     Hum_ID = 2,
     Motor_ID = 3
-}SensorType;
+}Sensor_Type;
 
 //Volatile because variable is being controlled outside of the compiler
 volatile uint16_t raw_hum, raw_temp, raw_motor = 0;
 
 //Converts binary to a decimal number
-float binarytoDecimal(uint16_t data){
+float Binary_to_Decimal(uint16_t data){
 
-    float decima = 0;
+    float decimal = 0;
     for (int i = 0; i < 16; i++){
         if(data & 1){
             decimal += (1 << i);
@@ -38,13 +38,13 @@ float binarytoDecimal(uint16_t data){
 }
 
 //Formats raw binary humidity to readable values using formula provided by data sheet
-float HumidityFormat(uint16_t data){
+float Humidity_Format(uint16_t data){
     float humidity_formatted = ((data * 1)/330);
     return humidity_formatted;
 }
 
 //Prints data formatted properly over UART 
-void send_Data(float data, SensorType sensor) {
+void Send_Data(float data, SensorType sensor) {
 
     char buffer[20];
     if (sensor == Temp_ID) {
@@ -59,7 +59,7 @@ void send_Data(float data, SensorType sensor) {
 }
 
 //Reads data, make sure this is in the while loop
-void ReadData(void){
+void Read_Data(void){
     raw_temp = I2C1_Read2ByteRegister(Temp_Sensor, Temp_Sensor);
     raw_hum = I2C1_Read2ByteRegister(Humidity_Slave, Humidity_Data);
 }

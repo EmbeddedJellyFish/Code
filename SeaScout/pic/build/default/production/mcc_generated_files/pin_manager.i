@@ -26869,9 +26869,9 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "D:\\MP_Lab\\xc8_c_compiler\\pic\\include\\xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 126 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 138 "mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 150 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -26907,7 +26907,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELC = 0x67;
     ANSELB = 0xFF;
     ANSELE = 0x07;
-    ANSELA = 0xFF;
+    ANSELA = 0xEF;
 
 
 
@@ -26960,6 +26960,7 @@ void PIN_MANAGER_Initialize(void)
     RC4PPS = 0x22;
     RC6PPS = 0x13;
     U1RXPPS = 0x17;
+    T0CKIPPS = 0x04;
     I2C1SCLPPS = 0x13;
 }
 

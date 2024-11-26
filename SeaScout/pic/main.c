@@ -106,6 +106,8 @@ void main(void) {
     I2C1_Initialize();
     UART1_Initialize();
 
+    TMR0_Initialize();
+
     for(;;){
 
         //WIP

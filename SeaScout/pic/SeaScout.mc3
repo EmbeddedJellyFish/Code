@@ -11546,19 +11546,27 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.c</file>
-         <hash>5e3153b172b1551f3ebeece0219c59da569af2a4a461926fb47727ab6c12234d</hash>
+         <hash>ab71f3ad47f0350fac4a82ef95bc21e003bbfb6ef78a6c9791d1842e780fcd3a</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>31e1029763e25f74180d821aad2463e9a624ed80c0c67d3ba452ce4ae59ce228</hash>
+         <hash>437d618e7fec1c2160b17c4310cb234e1d4965c3ea09a6baa98fcfb097c64f92</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
-         <hash>162fe784d8adfe647b21389aa0433e4bcf14d5eca543d5a39ec46917ccf00b1e</hash>
+         <hash>b2cea1b6b14fc59eaf0441d821319dd7f3f4df417c35567caadc80a582d511a4</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.h</file>
-         <hash>1a210ba6476877e26af2a6b7d7a13373286fddef8db8394f8d45070d1f0a9ebf</hash>
+         <hash>8d70e28ba2585fc7faeb3d980eb5ae3e413c4008ceeb1e415638e5aac119fe7d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr0.c</file>
+         <hash>82c2b6515281a0733f5f9913be8abaa3352f98c30aaead58db080733512c07c1</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\tmr0.h</file>
+         <hash>936c8469d618a49b8ee038850383e5ed13c5cf5c0caf027db8ee9088abc91eef</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart1.c</file>

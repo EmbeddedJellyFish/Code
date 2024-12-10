@@ -26868,12 +26868,13 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 55 "mcc_generated_files/pin_manager.h" 2
-# 126 "mcc_generated_files/pin_manager.h"
+# 54 "mcc_generated_files/pin_manager.h" 2
+# 146 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 138 "mcc_generated_files/pin_manager.h"
+# 158 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 50 "mcc_generated_files/pin_manager.c" 2
+# 49 "mcc_generated_files/pin_manager.c" 2
+
 
 
 
@@ -26895,16 +26896,16 @@ void PIN_MANAGER_Initialize(void)
 
     TRISE = 0x07;
     TRISA = 0xFF;
-    TRISB = 0xFF;
-    TRISC = 0xA7;
+    TRISB = 0xF9;
+    TRISC = 0xAF;
     TRISD = 0xFF;
 
 
 
 
     ANSELD = 0xFF;
-    ANSELC = 0x67;
-    ANSELB = 0xFF;
+    ANSELC = 0x0F;
+    ANSELB = 0xF9;
     ANSELE = 0x07;
     ANSELA = 0xFF;
 
@@ -26932,7 +26933,7 @@ void PIN_MANAGER_Initialize(void)
 
     ODCONE = 0x00;
     ODCONA = 0x00;
-    ODCONB = 0x00;
+    ODCONB = 0x06;
     ODCONC = 0x18;
     ODCOND = 0x00;
 
@@ -26954,12 +26955,12 @@ void PIN_MANAGER_Initialize(void)
     INLVLD = 0xFF;
     INLVLE = 0x0F;
 # 137 "mcc_generated_files/pin_manager.c"
-    I2C1SDAPPS = 0x14;
-    RC3PPS = 0x21;
-    RC4PPS = 0x22;
+    I2C2SCLPPS = 0x09;
+    RB1PPS = 0x23;
+    RB2PPS = 0x24;
     RC6PPS = 0x13;
     U1RXPPS = 0x17;
-    I2C1SCLPPS = 0x13;
+    I2C2SDAPPS = 0x0A;
 }
 
 void PIN_MANAGER_IOC(void)

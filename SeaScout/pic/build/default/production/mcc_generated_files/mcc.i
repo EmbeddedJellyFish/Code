@@ -26868,18 +26868,22 @@ __attribute__((__unsupported__("The READTIMER" "0" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
-# 50 "mcc_generated_files/mcc.h" 2
+# 49 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/device_config.h" 1
-# 51 "mcc_generated_files/mcc.h" 2
+# 50 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 126 "mcc_generated_files/pin_manager.h"
+# 146 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 138 "mcc_generated_files/pin_manager.h"
+# 158 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 52 "mcc_generated_files/mcc.h" 2
+# 51 "mcc_generated_files/mcc.h" 2
+
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdbool.h" 1 3
-# 54 "mcc_generated_files/mcc.h" 2
+# 53 "mcc_generated_files/mcc.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\conio.h" 1 3
 
 
@@ -27040,72 +27044,83 @@ char *ctermid(char *);
 
 char *tempnam(const char *, const char *);
 # 8 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\conio.h" 2 3
+# 54 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/interrupt_manager.h" 1
+# 87 "mcc_generated_files/interrupt_manager.h"
+void INTERRUPT_Initialize (void);
 # 55 "mcc_generated_files/mcc.h" 2
-# 1 "mcc_generated_files/i2c1_master.h" 1
-# 58 "mcc_generated_files/i2c1_master.h"
+
+# 1 "mcc_generated_files/i2c2_master.h" 1
+# 58 "mcc_generated_files/i2c2_master.h"
 typedef enum {
-    I2C1_NOERR,
-    I2C1_BUSY,
-    I2C1_FAIL
+    I2C2_NOERR,
+    I2C2_BUSY,
+    I2C2_FAIL
 
 
-} i2c1_error_t;
+} i2c2_error_t;
 
 typedef enum
 {
-    I2C1_STOP=1,
-    I2C1_RESTART_READ,
-    I2C1_RESTART_WRITE,
-    I2C1_CONTINUE,
-    I2C1_RESET_LINK
-} i2c1_operations_t;
+    I2C2_STOP=1,
+    I2C2_RESTART_READ,
+    I2C2_RESTART_WRITE,
+    I2C2_CONTINUE,
+    I2C2_RESET_LINK
+} i2c2_operations_t;
 
-typedef uint8_t i2c1_address_t;
-typedef i2c1_operations_t (*i2c1_callback_t)(void *funPtr);
-
-
-i2c1_operations_t I2C1_CallbackReturnStop(void *funPtr);
-i2c1_operations_t I2C1_CallbackReturnReset(void *funPtr);
-i2c1_operations_t I2C1_CallbackRestartWrite(void *funPtr);
-i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr);
+typedef uint8_t i2c2_address_t;
+typedef i2c2_operations_t (*i2c2_callback_t)(void *funPtr);
 
 
+i2c2_operations_t I2C2_CallbackReturnStop(void *funPtr);
+i2c2_operations_t I2C2_CallbackReturnReset(void *funPtr);
+i2c2_operations_t I2C2_CallbackRestartWrite(void *funPtr);
+i2c2_operations_t I2C2_CallbackRestartRead(void *funPtr);
 
 
 
 
-void I2C1_Initialize(void);
-# 101 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_Open(i2c1_address_t address);
-# 111 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_Close(void);
-# 123 "mcc_generated_files/i2c1_master.h"
-i2c1_error_t I2C1_MasterOperation(_Bool read);
+
+
+void I2C2_Initialize(void);
+# 101 "mcc_generated_files/i2c2_master.h"
+i2c2_error_t I2C2_Open(i2c2_address_t address);
+# 111 "mcc_generated_files/i2c2_master.h"
+i2c2_error_t I2C2_Close(void);
+# 123 "mcc_generated_files/i2c2_master.h"
+i2c2_error_t I2C2_MasterOperation(_Bool read);
 
 
 
 
-i2c1_error_t I2C1_MasterWrite(void);
+i2c2_error_t I2C2_MasterWrite(void);
 
 
 
 
-i2c1_error_t I2C1_MasterRead(void);
-# 142 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetTimeout(uint8_t timeOut);
-# 152 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetBuffer(void *buffer, size_t bufferSize);
-# 164 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetDataCompleteCallback(i2c1_callback_t cb, void *ptr);
-# 174 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetWriteCollisionCallback(i2c1_callback_t cb, void *ptr);
-# 184 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetAddressNackCallback(i2c1_callback_t cb, void *ptr);
-# 194 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetDataNackCallback(i2c1_callback_t cb, void *ptr);
-# 204 "mcc_generated_files/i2c1_master.h"
-void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr);
+i2c2_error_t I2C2_MasterRead(void);
+# 142 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetTimeout(uint8_t timeOut);
+# 152 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetBuffer(void *buffer, size_t bufferSize);
+# 164 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetDataCompleteCallback(i2c2_callback_t cb, void *ptr);
+# 174 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetWriteCollisionCallback(i2c2_callback_t cb, void *ptr);
+# 184 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetAddressNackCallback(i2c2_callback_t cb, void *ptr);
+# 194 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetDataNackCallback(i2c2_callback_t cb, void *ptr);
+# 204 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetTimeoutCallback(i2c2_callback_t cb, void *ptr);
+# 213 "mcc_generated_files/i2c2_master.h"
+void (*I2C2_InterruptHandler)(void);
+# 222 "mcc_generated_files/i2c2_master.h"
+void I2C2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 56 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/uart1.h" 1
 # 75 "mcc_generated_files/uart1.h"
 typedef union {
@@ -27138,19 +27153,21 @@ void UART1_SetOverrunErrorHandler(void (* interruptHandler)(void));
 # 432 "mcc_generated_files/uart1.h"
 void UART1_SetErrorHandler(void (* interruptHandler)(void));
 # 57 "mcc_generated_files/mcc.h" 2
-# 71 "mcc_generated_files/mcc.h"
+# 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "mcc_generated_files/mcc.h"
+# 85 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "mcc_generated_files/mcc.h"
+# 98 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
-# 48 "mcc_generated_files/mcc.c" 2
+# 47 "mcc_generated_files/mcc.c" 2
+
 
 
 void SYSTEM_Initialize(void)
 {
+    INTERRUPT_Initialize();
     PMD_Initialize();
-    I2C1_Initialize();
+    I2C2_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     UART1_Initialize();
@@ -27165,7 +27182,7 @@ void OSCILLATOR_Initialize(void)
 
     OSCEN = 0x00;
 
-    OSCFRQ = 0x02;
+    OSCFRQ = 0x03;
 
     OSCTUNE = 0x00;
 }
